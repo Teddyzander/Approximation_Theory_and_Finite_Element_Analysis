@@ -59,6 +59,31 @@ title('spline approximations for Q2')
 legend('data', 'standard spline', ...
 'location','northwest')
 
+%% use the spline function to create the letter s
+% get knots for letter S
+x_3 = [1,2,3,2,1.2,2,2.7];
+y_3 = [1,0,1,2.5,3.4,4,3.2];
+
+[xx_s, yy_s] = create_letter(x_3, y_3, 1);
+
+figure(4)
+plot(xx_s, yy_s)
+title('Letter S')
+
+%% use new knots to create another mystery letter! Also test size change
+
+% get knots
+x_4 = [3, 1.75, 0.9, 0, 0.5, 1.5, 3.25, 4.25, 4.25, 3, 3.75, 6.00];
+y_4 = [4, 1.60, 0.5, 0, 1.0, 0.5, 0.50, 2.25, 4.00, 4, 3.25, 4.25];
+
+[xx_myst, yy_myst] = create_letter(x_4, y_4, 1);
+[xx_myst2, yy_myst2] = create_letter(x_4, y_4, 2);
+
+figure(5)
+plot(xx_myst, yy_myst, '-b', xx_myst2, yy_myst2, '-k')
+title('Mystery Letter (script letter D)')
+
+% it's a sciprt letter 'D'!
 
 
 
